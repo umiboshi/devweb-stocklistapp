@@ -1,0 +1,88 @@
+body {
+	background-color: #ffd19a;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.main {
+	background-color: #FFFFFF;
+	width: 450px;
+	height: 450px;
+	margin: 7em auto;
+	border-radius: 1.5em;
+	box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+	text-align:center;
+}
+
+label{
+	color: #fa9f32;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.sign {
+	padding-top: 40px;
+	color: #fa9f32;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: bold;
+	font-size: 23px;
+}
+
+.info_area {
+	width:90%;
+	margin-left:24px;
+}
+
+.input_field {
+	width: 76%;
+	color: rgb(38, 50, 56);
+	font-weight: 700;
+	font-size: 14px;
+	letter-spacing: 1px;
+	background: rgba(136, 126, 126, 0.04);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 20px;
+	outline: none;
+	box-sizing: border-box;
+	border: 2px solid rgba(0, 0, 0, 0.02);
+	text-align: center;
+	margin-bottom: 16px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.insert_button {
+	width:180px;
+	cursor: pointer;
+	border-radius: 5em;
+	color: #fff;
+	background: linear-gradient(to right, #ffb257, #ffb257);
+	border: 0;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight:bold;
+	font-size: 12px;
+	margin-top: 8px;
+	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.back_button {
+	width:180px;
+	cursor: pointer;
+	border-radius: 5em;
+	color: #fff;
+	background: linear-gradient(to right, #ffb257, #ffb257);
+	border: 0;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight:bold;
+	font-size: 12px;
+	margin-top: 8px;
+	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
