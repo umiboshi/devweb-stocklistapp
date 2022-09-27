@@ -20,7 +20,8 @@
         <version>3.1.0</version>
 </dependency>
   </dependencies>
-  <build>
+  
+ <build>
     <finalName>devweb-stocklistapp</finalName>
     <plugins>
   		<plugin>
@@ -28,6 +29,17 @@
    		 <artifactId>maven-war-plugin</artifactId>
    		 <version>3.3.1</version>
 		</plugin>
+		
+		<plugin>
+    	 <groupId>org.apache.maven.plugins</groupId>
+    	 <artifactId>maven-compiler-plugin</artifactId>
+   		 <version>3.1</version>
+    	 <configuration>
+         <surce>1.8</surce>
+         <target>1.8</target>
+         </configuration>
+		</plugin>
+			
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
