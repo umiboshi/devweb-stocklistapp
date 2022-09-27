@@ -1,5 +1,6 @@
 package model.dao;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -22,8 +23,9 @@ public class StockListDAO {
 	 * @return listの一覧
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
+	 * @throws URISyntaxException 
 	 */
-	public List<StockListDTO> getStockList() throws ClassNotFoundException, SQLException {
+	public List<StockListDTO> getStockList() throws ClassNotFoundException, SQLException, URISyntaxException {
 		// 返却用Listの初期化
 		List<StockListDTO> stockList = new ArrayList<>();
 

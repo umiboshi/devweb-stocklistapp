@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.Date;
 import java.sql.SQLException;
 
@@ -52,7 +53,12 @@ public class UpdateServlet extends BaseServlet {
     	StockListDTO stocklist = new StockListDTO();
     
     	// StockListの取得
-    	stocklist = dao.getStockList(stocklistId);
+    	try {
+			stocklist = dao.getStockList(stocklistId);
+		} catch (ClassNotFoundException | SQLException | URISyntaxException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 
     	request.setAttribute("stocklist", stocklist);
     	request.getRequestDispatcher("update.jsp").forward(request, response);
@@ -71,7 +77,12 @@ public class UpdateServlet extends BaseServlet {
     	UpdateDAO dao = new UpdateDAO();
   
     	// 受け取ったパラメータを元にデータベースを更新する
-    	dao.updateStockList(id, name, number, memo, update);
+    	try {
+			dao.updateStockList(id, name, number, memo, update);
+		} catch (ClassNotFoundException | SQLException | URISyntaxException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 
     	response.sendRedirect("list-servlet");
     }

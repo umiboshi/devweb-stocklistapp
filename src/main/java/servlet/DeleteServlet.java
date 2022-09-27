@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -39,7 +40,12 @@ public class DeleteServlet extends BaseServlet {
 
     	DeleteDAO dao = new DeleteDAO();
     	// StockListを削除する
-    	dao.deleteStockList(id);
+    	try {
+			dao.deleteStockList(id);
+		} catch (ClassNotFoundException | SQLException | URISyntaxException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 
     	response.sendRedirect("list-servlet");
     }

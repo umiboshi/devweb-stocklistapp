@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -48,7 +49,7 @@ public class AddUserServlet extends HttpServlet {
     		// �󂯎�����p�����[�^�������ɓn��
     		dao.addUser(id, password);
 
-    	}catch(SQLException | ClassNotFoundException e) {
+    	}catch(SQLException | ClassNotFoundException | URISyntaxException e) {
     		e.printStackTrace();
     	}
 

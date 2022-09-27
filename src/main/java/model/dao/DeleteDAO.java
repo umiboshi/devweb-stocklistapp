@@ -1,5 +1,6 @@
 package model.dao;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -13,8 +14,9 @@ public class DeleteDAO {
 	 * @return 削除した行数
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
+	 * @throws URISyntaxException 
 	 */
-	public int deleteStockList(int id) throws SQLException, ClassNotFoundException {
+	public int deleteStockList(int id) throws SQLException, ClassNotFoundException, URISyntaxException {
 		int processingNumber = 0;
 
 		// SQL文

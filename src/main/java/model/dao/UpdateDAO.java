@@ -1,5 +1,6 @@
 package model.dao;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -18,8 +19,9 @@ public class UpdateDAO {
 	 * @return stocklist
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
+	 * @throws URISyntaxException 
 	 */
-	public StockListDTO getStockList(int id) throws SQLException, ClassNotFoundException {
+	public StockListDTO getStockList(int id) throws SQLException, ClassNotFoundException, URISyntaxException {
 		// 取得したStockListを格納する変数
 		StockListDTO stocklist = new StockListDTO();
 
@@ -58,8 +60,9 @@ public class UpdateDAO {
 	 * @return 更新行数
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
+	 * @throws URISyntaxException 
 	 */
-	public int updateStockList(int id, String name, int number, String memo, Date update) throws SQLException, ClassNotFoundException {
+	public int updateStockList(int id, String name, int number, String memo, Date update) throws SQLException, ClassNotFoundException, URISyntaxException {
 		// 変更した行数を返却するための変数
 		int processingNumber = 0;
 

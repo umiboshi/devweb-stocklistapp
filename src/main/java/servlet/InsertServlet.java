@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.Date;
 import java.sql.SQLException;
 
@@ -55,7 +56,12 @@ public class InsertServlet extends BaseServlet {
 		// DAOを生成し、StockListをデータベースに登録する
 		InsertDAO dao = new InsertDAO();
 		
-		dao.insertStocklist(name, number, memo, update, loginUserId);
+		try {
+			dao.insertStocklist(name, number, memo, update, loginUserId);
+		} catch (ClassNotFoundException | SQLException | URISyntaxException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 
 		response.sendRedirect("list-servlet");
 	}

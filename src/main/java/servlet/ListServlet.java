@@ -2,6 +2,7 @@ package servlet;
 
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +44,12 @@ public class ListServlet extends BaseServlet {
     	StockListDAO dao = new StockListDAO();
 
 		// StockList一覧を取得する
-		stocklist = dao.getStockList();
+		try {
+			stocklist = dao.getStockList();
+		} catch (ClassNotFoundException | SQLException | URISyntaxException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 	
     	// StockList一覧をリクエストスコープに設定する
     	request.setAttribute("stockList",stocklist);

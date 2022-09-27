@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -56,7 +57,7 @@ public class LoginServlet extends HttpServlet {
     	// データベースに接続し、ログイン認証を行う
     	try {
     		loginId = dao.LoginAuthenticate(id, password);
-    	} catch (SQLException | ClassNotFoundException e) {
+    	} catch (SQLException | ClassNotFoundException | URISyntaxException e) {
     		e.printStackTrace();
     	}
 

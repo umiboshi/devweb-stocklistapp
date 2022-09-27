@@ -1,5 +1,6 @@
 package model.dao;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -16,8 +17,9 @@ public class AddUserDAO {
 	 * @return 登録数
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
+	 * @throws URISyntaxException 
 	 */
-	public int addUser(String id, String password)throws ClassNotFoundException, SQLException {
+	public int addUser(String id, String password)throws ClassNotFoundException, SQLException, URISyntaxException {
 		// 更新した行数を返却するための変数
 		int processingNumber = 0;
 

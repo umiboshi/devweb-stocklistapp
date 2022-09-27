@@ -1,5 +1,6 @@
 package model.dao;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,9 +21,10 @@ public class LoginDAO {
 	 * @return 成功: id / 失敗: 空文字
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
+	 * @throws URISyntaxException 
 	 * */
 	
-	public String LoginAuthenticate(String id, String password) throws SQLException, ClassNotFoundException {
+	public String LoginAuthenticate(String id, String password) throws SQLException, ClassNotFoundException, URISyntaxException {
 		// 返却用変数
 		String resId = "";
 		// SQL作成

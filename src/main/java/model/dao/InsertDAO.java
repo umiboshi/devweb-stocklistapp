@@ -1,5 +1,6 @@
 package model.dao;
 
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -23,8 +24,9 @@ public class InsertDAO {
 	 * @return 登録数
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
+	 * @throws URISyntaxException 
 	 */
-	public int insertStocklist(String name, int number, String memo, Date update, String loginUserId)throws ClassNotFoundException, SQLException {
+	public int insertStocklist(String name, int number, String memo, Date update, String loginUserId)throws ClassNotFoundException, SQLException, URISyntaxException {
 		// 更新した行数を返却するための変数
 		int processingNumber = 0;
 
