@@ -41,7 +41,7 @@ public class InsertServlet extends BaseServlet {
 	protected void exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, ClassNotFoundException {
 		request.setCharacterEncoding("UTF-8");
 		// リクエストパラメータのname属性がnameの値を受け取る
-		String name = (String) request.getParameter(Parameters.NAME);
+		String name =replaceEscapeChar((String) request.getParameter(Parameters.NAME));
 		// リクエストパラメータのname属性がnumberの値を受け取る
 		int number = Integer.valueOf(request.getParameter(Parameters.NUMBER));
 		// リクエストパラメータのname属性がmemoの値を受け取る
@@ -59,11 +59,23 @@ public class InsertServlet extends BaseServlet {
 		try {
 			dao.insertStocklist(name, number, memo, update, loginUserId);
 		} catch (ClassNotFoundException | SQLException | URISyntaxException e) {
-			// TODO 自動生成された catch ブロック
+			// 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 
 		response.sendRedirect("list-servlet");
 	}
+	
+	 //replaceEscapeCharクラス
+	 //概要：文字列データのエスケープを行う
+	private String replaceEscapeChar(String val) {
+		if (val == null) return "";
+	       val = val.replaceAll("&", "& amp;");
+	       val = val.replaceAll("<", "& lt;");
+	       val = val.replaceAll(">", "& gt;");
+	       val = val.replaceAll("\"", "&quot;");
+	       val = val.replaceAll("'", "&apos;");
+	       return val;
+	     }
 
 }
