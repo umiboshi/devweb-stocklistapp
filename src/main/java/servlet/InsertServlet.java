@@ -56,6 +56,11 @@ public class InsertServlet extends BaseServlet {
 		// DAOを生成し、StockListをデータベースに登録する
 		InsertDAO dao = new InsertDAO();
 		
+		//idまたはpasswordが空白の場合
+    	if(name =="") {
+    		response.sendRedirect("insert.jsp");
+    	}else {
+
 		try {
 			dao.insertStocklist(name, number, memo, update, loginUserId);
 		} catch (ClassNotFoundException | SQLException | URISyntaxException e) {
@@ -64,7 +69,9 @@ public class InsertServlet extends BaseServlet {
 		}
 
 		response.sendRedirect("list-servlet");
-	}
+    	}
+    	
+	    }
 	
 	 //replaceEscapeCharクラス
 	 //概要：文字列データのエスケープを行う

@@ -17,6 +17,37 @@
 	    if(stockNum < stockNumMin ){ $(this).val(stockNumMin); }
 	    if(isNaN(stockNum)){ $(this).val('1'); }
 	  });
+
+	//始めにjQueryで送信ボタンを無効化する
+	    $('.insert_button').prop("disabled", true);
+	    
+	    //始めにjQueryで必須欄を加工する
+	    $('form input:required').each(function () {
+	        $(this).prev("label").addClass("required");
+	    });
+	    
+	    //入力欄の操作時
+	    $('form input:required').change(function () {
+	        //必須項目が空かどうかフラグ
+	        let flag = true;
+	        //必須項目をひとつずつチェック
+	        $('form input:required').each(function(e) {
+	            //もし必須項目が空なら
+	            if ($('form input:required').eq(e).val() === "") {
+	                flag = false;
+	            }
+	        });
+	        //全て埋まっていたら
+	        if (flag) {
+	            //送信ボタンを復活
+	            $('.insert_button').prop("disabled", false);
+	        }
+	        else {
+	            //送信ボタンを閉じる
+	            $('.insert_button').prop("disabled", true);
+	        }
+	    });
+	  
 	});
 </script>
 </head>
@@ -25,16 +56,16 @@
 	<p class="sign" align="center">リスト追加</p>
 	<form action="insert-servlet" method="post">
 	<div class =info_area>
-		<label>品名: </label><input class="input_field" type="text" name="<%=Parameters.NAME %>"><br>
+		<label>品名: </label><input class="input_field" required type="text" name="<%=Parameters.NAME %>"><br>
 	</div>
 	<div class =info_area>
-		<label>個数: </label><input class="input_field" id="stock_num" type="number" min="0" name="<%=Parameters.NUMBER %>"><br>
+		<label>個数: </label><input class="input_field" id="stock_num" required type="number" min="0" name="<%=Parameters.NUMBER %>"><br>
 	</div>
 	<div class =info_area>
 	<label>メモ: </label><input class="input_field" type="text" name="<%=Parameters.MEMO %>"><br>
 	</div>
 	<div class =info_area>
-		<label>確認日: </label><input class="input_field" type="date" name="<%=Parameters.UPDATE %>"> <br>
+		<label>確認日: </label><input class="input_field" required type="date" name="<%=Parameters.UPDATE %>"> <br>
 	</div>
 	<input class="insert_button" type="submit" value="在庫情報を登録する">
 	</form>

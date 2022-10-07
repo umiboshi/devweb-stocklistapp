@@ -32,9 +32,9 @@ public class AddUserServlet extends HttpServlet {
 	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	request.setCharacterEncoding("UTF-8");
-    	// ���N�G�X�g�p�����[�^��name������loginId�̒l���󂯎��
+    	// リクエストパラメーターのname属性からloginIdを受け取る
     	String id = (String) request.getParameter(Parameters.LOGIN_ID);
-    	// ���N�G�X�g�p�����[�^��name������password�̒l���󂯎��
+    	// リクエストパラメーターのname属性からpasswordを受け取る
     	String password = (String) request.getParameter(Parameters.LOGIN_PASSWORD);
     	
     	
@@ -46,7 +46,6 @@ public class AddUserServlet extends HttpServlet {
     	// DAOを生成し、ユーザー情報を登録
     	AddUserDAO dao = new AddUserDAO();
     	try {
-    		// �󂯎�����p�����[�^�������ɓn��
     		dao.addUser(id, password);
 
     	}catch(SQLException | ClassNotFoundException | URISyntaxException e) {
