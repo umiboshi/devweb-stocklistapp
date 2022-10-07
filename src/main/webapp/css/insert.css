@@ -72,6 +72,10 @@ label{
     appearance: none;
 }
 
+.insert_button[disabled] {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
 .required {
     color:red;
 }
