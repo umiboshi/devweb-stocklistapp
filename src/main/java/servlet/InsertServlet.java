@@ -45,7 +45,7 @@ public class InsertServlet extends BaseServlet {
 		// リクエストパラメータのname属性がnumberの値を受け取る
 		int number = Integer.valueOf(request.getParameter(Parameters.NUMBER));
 		// リクエストパラメータのname属性がmemoの値を受け取る
-		String memo = (String) request.getParameter(Parameters.MEMO);
+		String memo =replaceEscapeChar((String) request.getParameter(Parameters.MEMO));
 		// リクエストパラメータのname属性がupdateの値を受け取る
 		Date update = Date.valueOf(request.getParameter(Parameters.UPDATE));
 		
