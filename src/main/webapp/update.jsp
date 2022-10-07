@@ -24,23 +24,7 @@
 	        let flag = true;
    	        //必須項目をひとつずつチェック
 	        $('form input:required').each(function(e) {
-            //もし必須項目が空なら
-	        if ($('form input:required').eq(e).val() === "") {
-                flag = false;
-            }
-	        });
-	        //全て埋まっていたら
-	        if (flag) {
-	            //送信ボタンを復活
-	            $('.insert_button').prop("disabled", false);
-	        }
-	        else {
-	            //送信ボタンを閉じる
-	            $('.insert_button').prop("disabled", true);
-	        }
-	     });
-		  
-	});
+		});
 </script>
 </head>
 <%
