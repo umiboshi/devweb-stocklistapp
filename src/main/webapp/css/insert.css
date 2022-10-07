@@ -67,6 +67,20 @@ label{
 	font-size: 12px;
 	margin-top: 8px;
 	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.insert_button[disabled] {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+.required {
+    color:red;
+}
+.required:before {
+    content: "【必須】"
 }
 
 .back_button {
