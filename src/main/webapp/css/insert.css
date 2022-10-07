@@ -76,12 +76,6 @@ label{
     background-color: #aaa;
     cursor: not-allowed;
 }
-.required {
-    color:red;
-}
-.required:before {
-    content: "【必須】"
-}
 
 .back_button {
 	width:180px;
