@@ -31,7 +31,8 @@
 	<p class="sign" align="center">リスト追加</p>
 	<form action="insert-servlet" method="post">
 	<div class =info_area>
-	</div>
+		<label>品名：</label><input class="input_field" required type="text" name="<%=Parameters.NAME %>"><br>
+	</div>	
 	<div class =info_area>
 		<label>個数: </label><input class="input_field" id="stock_num" required type="number" min="0" name="<%=Parameters.NUMBER %>"><br>
 	</div>
