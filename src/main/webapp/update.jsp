@@ -8,6 +8,17 @@
 <meta charset="UTF-8">
 <title>編集画面</title>
 <link rel="stylesheet" type="text/css" href="css/insert.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	$(function(){
+	  $('#stock_num').on('mouseup keyup', function(e){
+	    var stockNum = parseInt($(this).val());
+	    var stockNumMin = parseInt($(this).attr('min'));
+	    if(stockNum < stockNumMin ){ $(this).val(stockNumMin); }
+	    if(isNaN(stockNum)){ $(this).val('1'); }
+	  });
+	});
+</script>
 </head>
 <%
 StockListDTO stocklist = (StockListDTO)request.getAttribute("stocklist");
@@ -21,7 +32,7 @@ StockListDTO stocklist = (StockListDTO)request.getAttribute("stocklist");
 		<label>品名：</label><input class="input_field" type="text" name="<%=Parameters.NAME %>" value="<%=stocklist.getName()%>"><br>
 	</div>		
 	<div class =info_area>
-		<label>個数：</label><input class="input_field" type="number" name="<%=Parameters.NUMBER %>" value="<%=stocklist.getNumber()%>"><br>
+		<label>個数：</label><input class="input_field" type="number" min="0" name="<%=Parameters.NUMBER %>" value="<%=stocklist.getNumber()%>"><br>
 	</div>		
 	<div class =info_area>
 		<label>メモ：</label><input class="input_field" type="text" name="<%=Parameters.MEMO %>" value="<%=stocklist.getMemo()%>"><br>
