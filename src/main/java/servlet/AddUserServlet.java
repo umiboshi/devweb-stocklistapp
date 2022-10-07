@@ -37,12 +37,6 @@ public class AddUserServlet extends HttpServlet {
     	// リクエストパラメーターのname属性からpasswordを受け取る
     	String password = (String) request.getParameter(Parameters.LOGIN_PASSWORD);
     	
-    	
-    	//idまたはpasswordが空白の場合
-    	if((id =="")||(password=="")) {
-    		response.sendRedirect("adduser.jsp");
-    	}else {
-
     	// DAOを生成し、ユーザー情報を登録
     	AddUserDAO dao = new AddUserDAO();
     	try {
@@ -54,7 +48,6 @@ public class AddUserServlet extends HttpServlet {
 
     	response.sendRedirect("login.jsp");
     	
-    	}
     }
     	
 }

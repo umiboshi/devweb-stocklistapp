@@ -77,10 +77,6 @@ public class UpdateServlet extends BaseServlet {
     	UpdateDAO dao = new UpdateDAO();
   
     	// 受け取ったパラメータを元にデータベースを更新する
-    	if(name =="") {
-    		response.sendRedirect("list.jsp");
-    	}else
-    		
     	try {
 			dao.updateStockList(id, name, number, memo, update);
 		} catch (ClassNotFoundException | SQLException | URISyntaxException e) {
@@ -89,7 +85,7 @@ public class UpdateServlet extends BaseServlet {
 		}
 
     	response.sendRedirect("list-servlet");
-        }
+    }
     
     //replaceEscapeCharクラス
 	 //概要：文字列データのエスケープを行う
