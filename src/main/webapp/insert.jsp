@@ -17,7 +17,7 @@
 		<label>品名: </label><input class="input_field" type="text" name="<%=Parameters.NAME %>"><br>
 	</div>
 	<div class =info_area>
-		<label>個数: </label><input class="input_field" type="number" name="<%=Parameters.NUMBER %>"><br>
+		<label>個数: </label><input class="input_field" type="number" min="0" name="<%=Parameters.NUMBER %>"><br>
 	</div>
 	<div class =info_area>
 	<label>メモ: </label><input class="input_field" type="text" name="<%=Parameters.MEMO %>"><br>
