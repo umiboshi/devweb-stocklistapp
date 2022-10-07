@@ -20,8 +20,6 @@
 	    
 	    //入力欄の操作時
 	    $('form input:required').change(function () {
-	        //必須項目が空かどうかフラグ	
-	        let flag = true;
    	        //必須項目をひとつずつチェック
 	        $('form input:required').each(function(e) {
 		});
