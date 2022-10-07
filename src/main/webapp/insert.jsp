@@ -21,11 +21,6 @@
 	//始めにjQueryで送信ボタンを無効化する
 	    $('.insert_button').prop("disabled", true);
 	    
-	    //始めにjQueryで必須欄を加工する
-	    $('form input:required').each(function () {
-	        $(this).prev("label").addClass("required");
-	    });
-	    
 	    //入力欄の操作時
 	    $('form input:required').change(function () {
 	        //必須項目が空かどうかフラグ
@@ -56,7 +51,6 @@
 	<p class="sign" align="center">リスト追加</p>
 	<form action="insert-servlet" method="post">
 	<div class =info_area>
-		<label>品名: </label><input class="input_field" required type="text" name="<%=Parameters.NAME %>"><br>
 	</div>
 	<div class =info_area>
 		<label>個数: </label><input class="input_field" id="stock_num" required type="number" min="0" name="<%=Parameters.NUMBER %>"><br>

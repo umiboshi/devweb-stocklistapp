@@ -17,9 +17,6 @@
 	    if(stockNum < stockNumMin ){ $(this).val(stockNumMin); }
 	    if(isNaN(stockNum)){ $(this).val('1'); }
 	  });
-
-	//始めにjQueryで送信ボタンを無効化する
-	    $('.insert_button').prop("disabled", true);
 	    
 	    //入力欄の操作時
 	    $('form input:required').change(function () {
