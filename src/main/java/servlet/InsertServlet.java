@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import constant.Parameters;
 import constant.SessionInfo;
+import model.CharCheck;
 import model.dao.InsertDAO;
 
 /**
@@ -41,11 +42,11 @@ public class InsertServlet extends BaseServlet {
 	protected void exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, ClassNotFoundException {
 		request.setCharacterEncoding("UTF-8");
 		// リクエストパラメータのname属性がnameの値を受け取る
-		String name =replaceEscapeChar((String) request.getParameter(Parameters.NAME));
+		String name =CharCheck.replaceEscapeChar((String) request.getParameter(Parameters.NAME));
 		// リクエストパラメータのname属性がnumberの値を受け取る
 		int number = Integer.valueOf(request.getParameter(Parameters.NUMBER));
 		// リクエストパラメータのname属性がmemoの値を受け取る
-		String memo =replaceEscapeChar((String) request.getParameter(Parameters.MEMO));
+		String memo =CharCheck.replaceEscapeChar((String) request.getParameter(Parameters.MEMO));
 		// リクエストパラメータのname属性がupdateの値を受け取る
 		Date update = Date.valueOf(request.getParameter(Parameters.UPDATE));
 		
@@ -67,16 +68,5 @@ public class InsertServlet extends BaseServlet {
     	
 	    }
 	
-	 //replaceEscapeCharクラス
-	 //概要：文字列データのエスケープを行う
-	private String replaceEscapeChar(String val) {
-		if (val == null) return "";
-	       val = val.replaceAll("&", "& amp;");
-	       val = val.replaceAll("<", "& lt;");
-	       val = val.replaceAll(">", "& gt;");
-	       val = val.replaceAll("\"", "&quot;");
-	       val = val.replaceAll("'", "&apos;");
-	       return val;
-	     }
 
 }

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import constant.Parameters;
+import model.CharCheck;
 import model.dao.UpdateDAO;
 import model.dao.dto.StockRecordDTO;
 
@@ -68,9 +69,9 @@ public class UpdateServlet extends BaseServlet {
     	// リクエストパラメータから値を取得する
     	request.setCharacterEncoding("UTF-8");
     	int id = Integer.parseInt(request.getParameter(Parameters.STOCKRECORD_ID));
-    	String name =replaceEscapeChar((String) request.getParameter(Parameters.NAME));
+    	String name =CharCheck.replaceEscapeChar((String) request.getParameter(Parameters.NAME));
     	int number = Integer.parseInt(request.getParameter(Parameters.NUMBER));
-    	String memo = replaceEscapeChar((String) request.getParameter(Parameters.MEMO));
+    	String memo = CharCheck.replaceEscapeChar((String) request.getParameter(Parameters.MEMO));
     	Date update = Date.valueOf(request.getParameter(Parameters.UPDATE));
 
     	// DAOを生成し、StockRecordを更新する
@@ -87,16 +88,5 @@ public class UpdateServlet extends BaseServlet {
     	response.sendRedirect("list-servlet");
     }
     
-    //replaceEscapeCharクラス
-	 //概要：文字列データのエスケープを行う
-	private String replaceEscapeChar(String val) {
-		if (val == null) return "";
-	       val = val.replaceAll("&", "& amp;");
-	       val = val.replaceAll("<", "& lt;");
-	       val = val.replaceAll(">", "& gt;");
-	       val = val.replaceAll("\"", "&quot;");
-	       val = val.replaceAll("'", "&apos;");
-	       return val;
-	     }
 
 }
