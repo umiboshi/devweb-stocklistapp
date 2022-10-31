@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="model.dao.dto.StockListDTO" %>
+<%@ page import="model.dao.dto.StockRecordDTO" %>
 <%@ page import="constant.Parameters" %>
 <!DOCTYPE html>
 <html>
@@ -26,7 +26,7 @@
 </script>
 </head>
 <%
-StockListDTO stocklist = (StockListDTO)request.getAttribute("stocklist");
+StockRecordDTO stocklist = (StockRecordDTO)request.getAttribute("stocklist");
 %>
 <body>
 <div class ="main">
@@ -45,7 +45,7 @@ StockListDTO stocklist = (StockListDTO)request.getAttribute("stocklist");
 	<div class =info_area>	
 		<label>確認日</label><input class="input_field" required type="date" name="<%=Parameters.UPDATE %>" value="<%=stocklist.getUpdate()%>"> <br>
 	</div>
-		<input type="hidden" name="<%=Parameters.STOCKLIST_ID %>" value="<%=stocklist.getId() %>">
+		<input type="hidden" name="<%=Parameters.STOCKRECORD_ID %>" value="<%=stocklist.getId() %>">
 	<input class="insert_button" type="submit" value="在庫情報を更新する">
 	</form>
 	<form action="list-servlet">
