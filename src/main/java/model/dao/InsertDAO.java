@@ -9,12 +9,12 @@ import java.sql.SQLException;
 import model.DBConnection;
 
 /**
- * stocklistをデータベースに登録するクラス
+ * stockRecordをデータベースに登録するクラス
  */
 public class InsertDAO {
 
 	/**
-	 * stocklistをデータべースに登録する
+	 * stockRecordをデータべースに登録する
 	 *
 	 * @param name
 	 * @param number
@@ -26,7 +26,7 @@ public class InsertDAO {
 	 * @throws SQLException
 	 * @throws URISyntaxException 
 	 */
-	public int insertStocklist(String name, int number, String memo, Date update, String loginUserId)throws ClassNotFoundException, SQLException, URISyntaxException {
+	public int insertStockRecord(String name, int number, String memo, Date update, String loginUserId)throws ClassNotFoundException, SQLException, URISyntaxException {
 		// 更新した行数を返却するための変数
 		int processingNumber = 0;
 

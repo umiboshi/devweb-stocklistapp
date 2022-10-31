@@ -3,27 +3,27 @@ package constant;
 public class Parameters {
 
 	/**
-	 * StockListのidをやりとりするパラメータ
+	 * stockRecordのidをやりとりするパラメータ
 	 */
-	public static final String STOCKLIST_ID = "stocklistId";
+	public static final String STOCKRECORD_ID = "stockRecordId";
 
 	/**
-	 * StockListのnameをやりとりするパラメータ
+	 * stockRecordのnameをやりとりするパラメータ
 	 */
 	public static final String NAME = "name";
 
 	/**
-	 * StockListのnumberをやりとりするパラメータ
+	 * stockRecordのnumberをやりとりするパラメータ
 	 */
 	public static final String NUMBER = "number";
 	
 	/**
-	 * StockListのmemoをやりとりするパラメータ
+	 * stockRecordのmemoをやりとりするパラメータ
 	 */
 	public static final String MEMO = "memo";
 
 	/**
-	 * StockListのupdateをやりとりするパラメータ
+	 * stockRecordのupdateをやりとりするパラメータ
 	 */
 	public static final String UPDATE = "update";
 	
@@ -35,5 +35,5 @@ public class Parameters {
 	/**
 	 * ログイン時に使用するパスワードのパラメータ名
 	 */
-	public static final String LOGIN_PASSWORD = "lodinPassword";
+	public static final String LOGIN_PASSWORD = "loginPassword";
 }

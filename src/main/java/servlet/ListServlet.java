@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.dao.StockListDAO;
-import model.dao.dto.StockListDTO;
+import model.dao.dto.StockRecordDTO;
 
 /**
  * Servlet implementation class ListSarvlet
@@ -29,7 +29,7 @@ public class ListServlet extends BaseServlet {
      */
     public ListServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        // STOCKLIST Auto-generated constructor stub
     }
 
 	/**
@@ -38,20 +38,20 @@ public class ListServlet extends BaseServlet {
     protected void exec(HttpServletRequest request, HttpServletResponse response)
     		throws  ServletException, IOException, SQLException, ClassNotFoundException {
     	// StockListの一覧を保持する変数を宣言
-    	List<StockListDTO> stocklist = new ArrayList<>();
+    	List<StockRecordDTO> stocklist = new ArrayList<>();
 
-    	// DAOを生成しStockList一覧を取得する
+    	// DAOを生成しStockRecord一覧を取得する
     	StockListDAO dao = new StockListDAO();
 
-		// StockList一覧を取得する
+		// StockRecord一覧を取得する
 		try {
-			stocklist = dao.getStockList();
+			stocklist = dao.getStockList(request);
 		} catch (ClassNotFoundException | SQLException | URISyntaxException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 	
-    	// StockList一覧をリクエストスコープに設定する
+    	// StockListをリクエストスコープに設定する
     	request.setAttribute("stockList",stocklist);
     	// StockList一覧画面に遷移する
     	RequestDispatcher rd = request.getRequestDispatcher("list.jsp");

@@ -36,14 +36,14 @@ public class DeleteServlet extends BaseServlet {
      */
     protected void exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, ClassNotFoundException {
     	// リクエストパラメータから削除するStockListのidを取得する
-    	int id = Integer.parseInt(request.getParameter(Parameters.STOCKLIST_ID));
+    	int id = Integer.parseInt(request.getParameter(Parameters.STOCKRECORD_ID));
 
     	DeleteDAO dao = new DeleteDAO();
     	// StockListを削除する
     	try {
-			dao.deleteStockList(id);
+			dao.deleteStockRecord(id);
 		} catch (ClassNotFoundException | SQLException | URISyntaxException e) {
-			// TODO 自動生成された catch ブロック
+			// STOCKLIST 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 

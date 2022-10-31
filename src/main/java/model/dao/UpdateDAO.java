@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.DBConnection;
-import model.dao.dto.StockListDTO;
+import model.dao.dto.StockRecordDTO;
 
 // StockListの更新を行うクラス
 public class UpdateDAO {
@@ -21,24 +21,24 @@ public class UpdateDAO {
 	 * @throws ClassNotFoundException
 	 * @throws URISyntaxException 
 	 */
-	public StockListDTO getStockList(int id) throws SQLException, ClassNotFoundException, URISyntaxException {
+	public StockRecordDTO getStockRecord(int id) throws SQLException, ClassNotFoundException, URISyntaxException {
 		// 取得したStockListを格納する変数
-		StockListDTO stocklist = new StockListDTO();
+		StockRecordDTO stocklist = new StockRecordDTO();
 
-		// Idを指定してStockListを取得するSQL
+		// Idを指定してStockRecordを取得するSQL
 		String sql = "SELECT id, name, number, memo, update FROM stocklist where id = ? ;";
 
-		// DBに接続し、StockListを取得する
+		// DBに接続し、StockRecordを取得する
 		try (Connection con = DBConnection.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
 
 			pstmt.setInt(1, id);
 
-			// SQLを実行しStockListを取得する
+			// SQLを実行しStockRecordを取得する
 			ResultSet res = pstmt.executeQuery();
 
 			while(res.next()) {
-				// DBから取得したStockListの情報をstocklistに持たせる
+				// DBから取得したStockRecordの情報をstocklistに持たせる
 				stocklist.setId(res.getInt("id"));
 				stocklist.setName(res.getString("name"));
 				stocklist.setNumber(res.getInt("number"));

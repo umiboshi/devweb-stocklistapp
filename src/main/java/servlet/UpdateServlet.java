@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import constant.Parameters;
 import model.dao.UpdateDAO;
-import model.dao.dto.StockListDTO;
+import model.dao.dto.StockRecordDTO;
 
 /**
  * Servlet implementation class UpdateServlet
@@ -44,19 +44,19 @@ public class UpdateServlet extends BaseServlet {
     	// リクエストパラメータからStockListIdを取得する
 		int stocklistId = 0;
 		try {
-			stocklistId = Integer.parseInt(request.getParameter(Parameters.STOCKLIST_ID));
+			stocklistId = Integer.parseInt(request.getParameter(Parameters.STOCKRECORD_ID));
 		} catch (NumberFormatException e) {
 			request.getRequestDispatcher("list-servlet").forward(request, response);
 		}
 
     	UpdateDAO dao = new UpdateDAO();
-    	StockListDTO stocklist = new StockListDTO();
+    	StockRecordDTO stocklist = new StockRecordDTO();
     
     	// StockListの取得
     	try {
-			stocklist = dao.getStockList(stocklistId);
+			stocklist = dao.getStockRecord(stocklistId);
 		} catch (ClassNotFoundException | SQLException | URISyntaxException e) {
-			// TODO 自動生成された catch ブロック
+			// STOCKLIST 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 
@@ -67,13 +67,13 @@ public class UpdateServlet extends BaseServlet {
     protected void getPostRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, ClassNotFoundException {
     	// リクエストパラメータから値を取得する
     	request.setCharacterEncoding("UTF-8");
-    	int id = Integer.parseInt(request.getParameter(Parameters.STOCKLIST_ID));
+    	int id = Integer.parseInt(request.getParameter(Parameters.STOCKRECORD_ID));
     	String name =replaceEscapeChar((String) request.getParameter(Parameters.NAME));
     	int number = Integer.parseInt(request.getParameter(Parameters.NUMBER));
     	String memo = replaceEscapeChar((String) request.getParameter(Parameters.MEMO));
     	Date update = Date.valueOf(request.getParameter(Parameters.UPDATE));
 
-    	// DAOを生成し、StockListを更新する
+    	// DAOを生成し、StockRecordを更新する
     	UpdateDAO dao = new UpdateDAO();
   
     	// 受け取ったパラメータを元にデータベースを更新する

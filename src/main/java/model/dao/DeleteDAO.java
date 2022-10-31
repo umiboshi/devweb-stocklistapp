@@ -16,7 +16,7 @@ public class DeleteDAO {
 	 * @throws ClassNotFoundException
 	 * @throws URISyntaxException 
 	 */
-	public int deleteStockList(int id) throws SQLException, ClassNotFoundException, URISyntaxException {
+	public int deleteStockRecord(int id) throws SQLException, ClassNotFoundException, URISyntaxException {
 		int processingNumber = 0;
 
 		// SQL文

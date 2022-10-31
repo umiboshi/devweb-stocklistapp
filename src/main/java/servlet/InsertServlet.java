@@ -32,7 +32,7 @@ public class InsertServlet extends BaseServlet {
      */
     public InsertServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        // STOCKLIST Auto-generated constructor stub
     }
 
 	/**
@@ -53,11 +53,11 @@ public class InsertServlet extends BaseServlet {
 		HttpSession session = request.getSession();
 		loginUserId = (String)session.getAttribute(SessionInfo.LOGIN_USER_ID);
 
-		// DAOを生成し、StockListをデータベースに登録する
+		// DAOを生成し、StockRecordをデータベースに登録する
 		InsertDAO dao = new InsertDAO();
 		
 		try {
-			dao.insertStocklist(name, number, memo, update, loginUserId);
+			dao.insertStockRecord(name, number, memo, update, loginUserId);
 		} catch (ClassNotFoundException | SQLException | URISyntaxException e) {
 			// 自動生成された catch ブロック
 			e.printStackTrace();

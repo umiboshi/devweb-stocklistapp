@@ -3,37 +3,37 @@ package model.dao.dto;
 import java.sql.Date;
 
 /**
- * stocklistを保持するクラス
+ * stockRecordを保持するクラス
  */
-public class StockListDTO {
+public class StockRecordDTO {
 	/**
-	 * stocklistのIdを保持する
+	 * stockRecordのIdを保持する
 	 */
 	private int id;
 
 	/**
-	 * stocklistのnameを保持する
+	 * stockRecordのnameを保持する
 	 */
 	private String name;
 
 	/**
-	 * stocklistのnumberを保持する
+	 * stockRecordのnumberを保持する
 	 */
 	private int number;
 
 	/**
-	 * stocklistのmemoを保持する
+	 * stockRecordのmemoを保持する
 	 */
 	private String memo;
 
 	/**
-	 * stocklistのupdateを保持する
+	 * stockRecordのupdateを保持する
 	 */
 	private Date update;
 	
 	
 	/**
-	 * stocklistのuserIdを保持する
+	 * stockRecordのuserIdを保持する
 	 */
 	private String userId;
 
@@ -41,7 +41,7 @@ public class StockListDTO {
 	 * 引数なしコンストラクタ
 	 * 初期化を行う
 	 */
-	public StockListDTO () {
+	public StockRecordDTO () {
 		id = 0;
 		name = "";
 		number = 0;
@@ -59,7 +59,7 @@ public class StockListDTO {
 	 * @param update
 	 * @param userId
 	 */
-	public StockListDTO(int id, String name, int number, String memo,  Date update, String userId) {
+	public StockRecordDTO(int id, String name, int number, String memo,  Date update, String userId) {
 		this.id = id;
 		this.name = name;
 		this.number = number;
