@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>StockList-AddUser-</title>
-<link rel="stylesheet" type="text/css" href="css/insert.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/login.css">
 <script src="js/inputcheck.js"></script>
 </head>
 <body>
