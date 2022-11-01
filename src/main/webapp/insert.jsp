@@ -8,39 +8,23 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
 <title>追加画面</title>
 <link rel="stylesheet" type="text/css" href="css/insert.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>
-	$(function(){
-	  $('#stock_num').on('mouseup keyup', function(e){
-	    var stockNum = parseInt($(this).val());
-	    var stockNumMin = parseInt($(this).attr('min'));
-	    if(stockNum < stockNumMin ){ $(this).val(stockNumMin); }
-	    if(isNaN(stockNum)){ $(this).val('1'); }
-	  });
-
-	    //入力欄の操作時
-	    $('form input:required').change(function () {
-	        //必須項目をひとつずつチェック
-	        $('form input:required').each(function(e) {
-	  
-		});
-</script>
+<script src="js/inputcheck.js"></script>
 </head>
 <body>
 <div class="main">
 	<p class="sign" align="center">リスト追加</p>
 	<form action="insert-servlet" method="post">
 	<div class =info_area>
-		<label>品名：</label><input class="input_field" required type="text" name="<%=Parameters.NAME %>"><br>
+		<label>品名：</label><input class="input_field" type="text" name="<%=Parameters.NAME %>" required><br>
 	</div>	
 	<div class =info_area>
-		<label>個数: </label><input class="input_field" id="stock_num" required type="number" min="0" name="<%=Parameters.NUMBER %>"><br>
+		<label>個数: </label><input class="input_field" id="stock_num" type="number" min="0" name="<%=Parameters.NUMBER %>" required><br>
 	</div>
 	<div class =info_area>
 	<label>メモ: </label><input class="input_field" type="text" name="<%=Parameters.MEMO %>"><br>
 	</div>
 	<div class =info_area>
-		<label>確認日: </label><input class="input_field" required type="date" name="<%=Parameters.UPDATE %>"> <br>
+		<label>確認日: </label><input class="input_field" type="date" name="<%=Parameters.UPDATE %>" required><br>
 	</div>
 	<input class="insert_button" type="submit" value="在庫情報を登録する">
 	</form>
