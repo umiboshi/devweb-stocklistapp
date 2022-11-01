@@ -23,7 +23,7 @@
 	<form action="adduser.jsp">
 		<input type="submit" value="新規ユーザー追加" class="button" />
 	</form>
-	<form action="index.html">
+	<form action="index.jsp">
 		<input type="submit" value="ホームへ戻る" class="button" />
 	</form>
 </div>
